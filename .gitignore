@@ -157,3 +157,5 @@ fabric.properties
 
 # Node Modules
 node_modules/
+
+gradle\.properties
