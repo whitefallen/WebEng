@@ -19,6 +19,7 @@ public class SessionCounter implements HttpSessionListener {
         setActiveSessionCount(se);
     }
 
+    // Synroch?
     private void setActiveSessionCount(HttpSessionEvent se) {
         se.getSession().getServletContext()
                 .setAttribute("activeSessions", sessionCount.get());

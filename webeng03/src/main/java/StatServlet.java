@@ -25,6 +25,8 @@ public class StatServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
 
         response.setContentType("text/html");
+        response.getWriter().append("<html>");
+        response.getWriter().append("<body>");
         response.getWriter().append("<main>");
             response.getWriter().append("<h1>Statistics</h1>");
             response.getWriter().append("<div>");
@@ -39,6 +41,8 @@ public class StatServlet extends HttpServlet {
                 response.getWriter().append("</div>");
             response.getWriter().append("</div>");
         response.getWriter().append("</main>");
+        response.getWriter().append("</body>");
+        response.getWriter().append("</html>");
 
     }
 }
