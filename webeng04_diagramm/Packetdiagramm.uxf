@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1100</x>
+      <y>290</y>
+      <w>280</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>ArticleManager
+--
+-stockDB MockArticleDAO
+--
++setStockDB(_stockDB:MockArticleDAO) 
++addArticle(_name:string,_id:int,_price:float,_amount:int)
++removeArticle(_id:int)
++getArticleList() : ArrayList&lt;ArticleDTO&gt;
++getArticleById(_id:int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>30</y>
+      <w>210</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>ArticleDTO
+--
+-id: int
+-name: string
+-price: float
+-amount; int
+--
++getName() : string
++setName(_name : string)
++getId() : int
++setId(_id : int)
++setAmount(_amount : int)
++getAmount() : int
++setPrice(_price : floar)
++getPrive() : float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>30</y>
+      <w>280</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>ShoppingCartDTO
+--
+-articleList: ArrayList&lt;ArticleDTO&gt;
+-sum: float
+--
++getArticleList() : ArrayList&lt;ArticleDTO&gt;
++addArticleToList(_article : ArticleDTO)
++removeArticle(_article : ArticleDTO)
++getSum() : float 
++setSum(_sum : float)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>220</y>
+      <w>280</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>MockArticleDAO
+--
+-stock: ArrayList&lt;ArticleDTO&gt;
+--
++getStock() : ArrayList&lt;ArticleDTO&gt;
++addTostock(_article : ArticleDTO)
++removeFromStock(_article : ArticleDTO)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1100</x>
+      <y>60</y>
+      <w>280</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>ShoppingCartManager
+--
+-cartDTO ShoppingCartDTO
+--
++addArticleToCart(_Article:ArticleDTO) 
++removeArticleFromCart(_Article:ArticleDTO)
++getCurrentCart():Arraylist&lt;ArticleDTO&gt;
++updateSum(_price:float)
++getSum() : float
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>680</y>
+      <w>280</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>ShopServlet
+--
+--
++doGet(req:HttpServletRequest, res:HttpServletResponse)
++doPost(req:HttpServletRequest, res:HttpServletResponse)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>200</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+&lt; beinhaltet</panel_attributes>
+    <additional_attributes>210.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>50</y>
+      <w>230</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+&lt; beinhaltet</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>120</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+&lt; beinhaltet </panel_attributes>
+    <additional_attributes>210.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>340</y>
+      <w>240</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+m2=1
+beinhaltet ^</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>230</y>
+      <w>250</w>
+      <h>550</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1
+benutzt ^</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;530.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>460</y>
+      <w>460</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+benutzt ^</panel_attributes>
+    <additional_attributes>10.0;330.0;440.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>150</x>
+      <y>0</y>
+      <w>800</w>
+      <h>520</h>
+    </coordinates>
+    <panel_attributes>Persistence</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>540</x>
+      <y>620</y>
+      <w>420</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>Presentation</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1060</x>
+      <y>10</y>
+      <w>380</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>Logic</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
