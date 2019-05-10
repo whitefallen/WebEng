@@ -16,6 +16,8 @@ import java.util.*;
 @WebServlet(urlPatterns ={ "/" })
 public class ShopServlet extends HttpServlet {
 
+
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -34,11 +36,9 @@ public class ShopServlet extends HttpServlet {
         response.getWriter().append("<body>");
         response.getWriter().append("<main>");
 
-        //MockArticleDAO newStockDB = new MockArticleDAO();
         ArticleManager newAricleManager = new ArticleManager();
         ShoppingCartManager newShoppingCartManager = new ShoppingCartManager();
-
-
+        newShoppingCartManager.setArticleManager(newAricleManager);
         newAricleManager.addArticle("ItemNr1", 1,10, 5.55f);
         newAricleManager.addArticle("ItemNr2", 2,10, 25.55f);
         newAricleManager.addArticle("ItemNr3", 3,10, 35.55f);
@@ -56,22 +56,13 @@ public class ShopServlet extends HttpServlet {
         newShoppingCartManager.addArticletoCart(newAricleManager.getArticleById(6));
 
         ArrayList<ArticleDTO> cartlist = newShoppingCartManager.getCurrentCart();
-        response.getWriter().append("<h2>Warenkorb</h2>");
-        for (ArticleDTO item : cartlist ) {
-            response.getWriter().append("Name: "+item.getName()+" Preis: "+item.getPrice()+"<br>");
-        }
+        this.printShoppingCart(request,response,cartlist);
         response.getWriter().append("Gesammt Summe: " + newShoppingCartManager.getSum());
-
-
         this.printArticleList(request,response,stockList);
         newShoppingCartManager.checkoutCart();
         cartlist = newShoppingCartManager.getCurrentCart();
-        response.getWriter().append("<h2>Warenkorb</h2>");
-        for (ArticleDTO item : cartlist ) {
-            response.getWriter().append("Name: "+item.getName()+" Preis: "+item.getPrice()+"<br>");
-        }
+        this.printShoppingCart(request,response,cartlist);
         response.getWriter().append("Gesammt Summe: " + newShoppingCartManager.getSum());
-
 
         response.getWriter().append("</main>");
         response.getWriter().append("</body>");
@@ -88,5 +79,12 @@ public class ShopServlet extends HttpServlet {
         }
 
         response.getWriter().append("</div>");
+    }
+
+    private void printShoppingCart(HttpServletRequest request, HttpServletResponse response, ArrayList<ArticleDTO> cartlist) throws ServletException, IOException {
+        response.getWriter().append("<h2>Warenkorb</h2>");
+        for (ArticleDTO item : cartlist ) {
+            response.getWriter().append("Name: "+item.getName()+" Preis: "+item.getPrice()+"<br>");
+        }
     }
 }

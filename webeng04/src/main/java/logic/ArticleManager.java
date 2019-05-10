@@ -10,10 +10,6 @@ public class ArticleManager {
 
     private MockArticleDAO stockDB = new MockArticleDAO();
 
-    /*
-    public ArticleManager(MockArticleDAO _stockDB) {
-        this.setStockDB(_stockDB);
-    }*/
 
     public void addArticle(String _name, int _id, int _amount, float _price) {
         this.stockDB.addToStock(new ArticleDTO(_name, _id, _amount, _price));
@@ -26,15 +22,19 @@ public class ArticleManager {
         }
     }
 
-    public void setStockDB(MockArticleDAO stockDB) {
-        this.stockDB = stockDB;
-    }
-
     public ArrayList<ArticleDTO> getArticleList() {
         return this.stockDB.getStock();
     }
 
     public ArticleDTO getArticleById(int _id) {
        return this.stockDB.getArticleById(_id);
+    }
+
+    public void updateAddAmount(ArticleDTO article) {
+        article.setAmount(article.getAmount()-1);
+    }
+
+    public void updateRemoveAmount(ArticleDTO article) {
+        article.setAmount(article.getAmount()+1);
     }
 }
