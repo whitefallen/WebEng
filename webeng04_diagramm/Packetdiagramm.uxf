@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1100</x>
-      <y>290</y>
-      <w>280</w>
-      <h>180</h>
+      <x>936</x>
+      <y>342</y>
+      <w>252</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>ArticleManager
 --
@@ -24,10 +24,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>30</y>
-      <w>210</w>
-      <h>250</h>
+      <x>81</x>
+      <y>630</y>
+      <w>189</w>
+      <h>225</h>
     </coordinates>
     <panel_attributes>ArticleDTO
 --
@@ -50,10 +50,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>30</y>
-      <w>280</w>
-      <h>170</h>
+      <x>261</x>
+      <y>801</y>
+      <w>252</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>ShoppingCartDTO
 --
@@ -71,10 +71,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>610</x>
-      <y>220</y>
-      <w>280</w>
-      <h>260</h>
+      <x>495</x>
+      <y>279</y>
+      <w>252</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>MockArticleDAO
 --
@@ -89,10 +89,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1100</x>
-      <y>60</y>
-      <w>280</w>
-      <h>190</h>
+      <x>936</x>
+      <y>135</y>
+      <w>252</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>ShoppingCartManager
 --
@@ -109,10 +109,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>680</y>
-      <w>280</w>
-      <h>260</h>
+      <x>486</x>
+      <y>693</y>
+      <w>252</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>ShopServlet
 --
@@ -124,49 +124,49 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>200</y>
-      <w>230</w>
-      <h>120</h>
+      <x>261</x>
+      <y>342</y>
+      <w>261</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..n
 &lt; beinhaltet</panel_attributes>
-    <additional_attributes>210.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>260.0;10.0;10.0;500.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>50</y>
-      <w>230</w>
-      <h>50</h>
+      <x>252</x>
+      <y>666</y>
+      <w>99</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..n
 &lt; beinhaltet</panel_attributes>
-    <additional_attributes>210.0;20.0;10.0;30.0</additional_attributes>
+    <additional_attributes>10.0;190.0;20.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
-      <y>120</y>
-      <w>230</w>
-      <h>80</h>
+      <x>504</x>
+      <y>225</y>
+      <w>441</w>
+      <h>684</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 &lt; beinhaltet </panel_attributes>
-    <additional_attributes>210.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>470.0;10.0;10.0;740.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
-      <y>340</y>
-      <w>240</w>
-      <h>50</h>
+      <x>738</x>
+      <y>387</y>
+      <w>216</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=-
 
@@ -177,10 +177,10 @@ beinhaltet ^</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>230</y>
-      <w>250</w>
-      <h>550</h>
+      <x>729</x>
+      <y>288</y>
+      <w>225</w>
+      <h>495</h>
     </coordinates>
     <panel_attributes>lt=-
 m2=1
@@ -190,10 +190,10 @@ benutzt ^</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>460</y>
-      <w>460</w>
-      <h>350</h>
+      <x>729</x>
+      <y>495</y>
+      <w>414</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -203,10 +203,10 @@ benutzt ^</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>150</x>
-      <y>0</y>
-      <w>800</w>
-      <h>520</h>
+      <x>81</x>
+      <y>81</y>
+      <w>720</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>Persistence</panel_attributes>
     <additional_attributes/>
@@ -214,10 +214,10 @@ benutzt ^</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>540</x>
-      <y>620</y>
-      <w>420</w>
-      <h>380</h>
+      <x>468</x>
+      <y>639</y>
+      <w>378</w>
+      <h>342</h>
     </coordinates>
     <panel_attributes>Presentation</panel_attributes>
     <additional_attributes/>
@@ -225,12 +225,23 @@ benutzt ^</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1060</x>
-      <y>10</y>
-      <w>380</w>
-      <h>490</h>
+      <x>900</x>
+      <y>90</y>
+      <w>342</w>
+      <h>441</h>
     </coordinates>
     <panel_attributes>Logic</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>81</x>
+      <y>603</y>
+      <w>360</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>Transferobjekte</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

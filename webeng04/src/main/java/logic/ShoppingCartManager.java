@@ -9,6 +9,7 @@ public class ShoppingCartManager {
 
 
     private ShoppingCartDTO cartDTO = new ShoppingCartDTO();
+    private ArticleManager articleManager = null;
 
     public void addArticletoCart(ArticleDTO _article) {
         _article.setAmount(_article.getAmount()-1);
@@ -29,6 +30,11 @@ public class ShoppingCartManager {
 
     public void cancelShopping() {
 
+    }
+
+    public void checkoutCart() {
+        this.cartDTO.checkoutCart();
+        this.cartDTO.setSum(0f);
     }
 
     public ArrayList<ArticleDTO> getCurrentCart() {

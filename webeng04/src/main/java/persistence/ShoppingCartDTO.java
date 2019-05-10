@@ -38,4 +38,8 @@ public class ShoppingCartDTO {
     public void setSum(float sum) {
         this.sum = sum;
     }
+
+    public void checkoutCart() {
+        this.setArticleList(new ArrayList<>());
+    }
 }

@@ -34,8 +34,8 @@ public class ShopServlet extends HttpServlet {
         response.getWriter().append("<body>");
         response.getWriter().append("<main>");
 
-        MockArticleDAO newStockDB = new MockArticleDAO();
-        ArticleManager newAricleManager = new ArticleManager(newStockDB);
+        //MockArticleDAO newStockDB = new MockArticleDAO();
+        ArticleManager newAricleManager = new ArticleManager();
         ShoppingCartManager newShoppingCartManager = new ShoppingCartManager();
 
 
@@ -64,6 +64,13 @@ public class ShopServlet extends HttpServlet {
 
 
         this.printArticleList(request,response,stockList);
+        newShoppingCartManager.checkoutCart();
+        cartlist = newShoppingCartManager.getCurrentCart();
+        response.getWriter().append("<h2>Warenkorb</h2>");
+        for (ArticleDTO item : cartlist ) {
+            response.getWriter().append("Name: "+item.getName()+" Preis: "+item.getPrice()+"<br>");
+        }
+        response.getWriter().append("Gesammt Summe: " + newShoppingCartManager.getSum());
 
 
         response.getWriter().append("</main>");
