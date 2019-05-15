@@ -22,8 +22,8 @@
 </div>
 <div>
     <form>
-        <label>Password: </label><input type="text" name="password">
-        <label>Offset: </label><input type="text" name="offset">
+        <label>Password: </label><input type="text" name="password" required>
+        <label>Offset: </label><input type="text" name="offset" required>
         <button type="submit">Cypher Me</button>
     </form>
     <%!
@@ -39,9 +39,9 @@
         String cryptedPass = null;
         if(request.getParameter("password") != null && request.getParameter("offset") != null) {
             cryptedPass = this.caesarCode(request.getParameter("password"), Integer.parseInt(request.getParameter("offset")));
+			out.print(cryptedPass);
         }
     %>
-    <%=cryptedPass%>
     <div>
         Methode: <%= request.getMethod()%>
     </div>
