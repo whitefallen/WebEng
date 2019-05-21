@@ -1,6 +1,5 @@
 package persistence;
 
-import interfaces.ArticleDAO;
 import transferobject.ArticleDTO;
 
 import java.sql.SQLException;

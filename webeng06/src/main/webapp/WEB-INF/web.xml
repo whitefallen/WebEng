@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-	<display-name>"Webeng05"</display-name>
+	<display-name>"Webeng06"</display-name>
 
 	<servlet>
 		<servlet-name>H2Console</servlet-name>

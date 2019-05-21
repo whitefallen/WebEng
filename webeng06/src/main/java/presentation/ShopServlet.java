@@ -40,7 +40,7 @@ public class ShopServlet extends HttpServlet {
 
         ArticleManager newAricleManager = new ArticleManager();
         ArticleFactoryDAO articleFactoryDAO = new ArticleFactoryDAO();
-        newAricleManager.setStockDB(articleFactoryDAO.getArticle(2));
+        newAricleManager.setStockDB(articleFactoryDAO.getArticle(1));
         ShoppingCartManager newShoppingCartManager = new ShoppingCartManager();
         newShoppingCartManager.setArticleManager(newAricleManager);
 
@@ -55,7 +55,7 @@ public class ShopServlet extends HttpServlet {
 
             this.printArticleList(request,response,stockList);
 
-            newShoppingCartManager.addArticletoCart(newAricleManager.getArticleById(100));
+            newShoppingCartManager.addArticletoCart(newAricleManager.getArticleById(1));
             newShoppingCartManager.addArticletoCart(newAricleManager.getArticleById(100));
 
             ArrayList<ArticleDTO> cartlist = newShoppingCartManager.getCurrentCart();

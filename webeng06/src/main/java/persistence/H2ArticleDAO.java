@@ -1,8 +1,7 @@
 package persistence;
 
-import interfaces.ArticleDAO;
-import transferobject.ArticleDTO;
 import transferobject.SqlConfiguration;
+import transferobject.ArticleDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
