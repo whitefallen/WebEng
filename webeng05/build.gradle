@@ -1,0 +1,15 @@
+dependencies {
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.199'			// add h2-Database dependency
+
+}
+
+gretty {
+    contextPath = '/webeng05'	// Path on server to web application
+}
+
+eclipse.wtp.facet {			// add facets to projects
+    facet name: 'jst.web', version: '3.1'	// add web project facet
+
+}
+sourceCompatibility = 1.8
