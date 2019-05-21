@@ -21,13 +21,13 @@
     </div>
 </div>
 <div>
-    <form>
+    <form method="get">
         <label>Password: </label><input type="text" name="password" required>
-        <label>Offset: </label><input type="text" name="offset" required>
+        <label>Offset: </label><input type="number" name="offset" required>
         <button type="submit">Cypher Me</button>
     </form>
     <%!
-        public String caesarCode(String _password, int offset) {
+        private String caesarCode(String _password, int offset) {
             char[] passAlphabet = _password.toCharArray();
             for (int i = 0; i < passAlphabet.length; i++) {
                 passAlphabet[i] += offset;
@@ -36,7 +36,7 @@
         }
     %>
     <%
-        String cryptedPass = null;
+        String cryptedPass = "";
         if(request.getParameter("password") != null && request.getParameter("offset") != null) {
             cryptedPass = this.caesarCode(request.getParameter("password"), Integer.parseInt(request.getParameter("offset")));
 			out.print(cryptedPass);

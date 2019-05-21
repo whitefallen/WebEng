@@ -1,8 +1,7 @@
 package logic;
 
-import interfaces.ArticleDAO;
+import persistence.ArticleDAO;
 import transferobject.ArticleDTO;
-import persistence.MockArticleDAO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

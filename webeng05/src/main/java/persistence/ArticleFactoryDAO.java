@@ -1,7 +1,5 @@
 package persistence;
 
-import interfaces.ArticleDAO;
-
 public class ArticleFactoryDAO {
 
     public static ArticleDAO getArticle(int _type) {
@@ -11,8 +9,8 @@ public class ArticleFactoryDAO {
                 _article = new H2ArticleDAO();
                 break;
             case 2:
-                _article = new MockArticleDAO();
             default:
+                _article = new MockArticleDAO();
                 break;
         }
         return _article;
