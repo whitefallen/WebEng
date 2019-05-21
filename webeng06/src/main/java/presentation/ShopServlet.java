@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;
 
-@WebServlet(urlPatterns ={ "/" })
+@WebServlet(urlPatterns ={ "/shop" })
 public class ShopServlet extends HttpServlet {
 
 
