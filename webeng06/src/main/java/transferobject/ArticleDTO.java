@@ -9,12 +9,17 @@ public class ArticleDTO implements Serializable {
     private int amount;
     private float price;
 
+    public ArticleDTO() {
+
+    }
+
     public ArticleDTO (String _name, int _id, int _amount, float _price) {
         this.setName(_name);
         this.setId(_id);
         this.setAmount(_amount);
         this.setPrice(_price);
     }
+
 
     public String getName() {
         return name;

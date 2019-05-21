@@ -3,6 +3,7 @@ package presentation;
 import logic.ArticleManager;
 import logic.ShoppingCartManager;
 import persistence.ArticleFactoryDAO;
+import transferobject.ArticleDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 @WebServlet(urlPatterns ={ "/frontend" })
 public class FrontendController extends HttpServlet {
@@ -37,6 +40,14 @@ public class FrontendController extends HttpServlet {
         }
 
         response.setContentType("text/html;charset=UTF-8");
+        try {
+            this.routerAction(request,response);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void routerAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         String action = request.getParameter("action");
         if(action != null) {
             switch(action) {
@@ -72,13 +83,18 @@ public class FrontendController extends HttpServlet {
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
     }
 
-    private void articleDetailsAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void articleDetailsAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        if(request.getParameter("id") != null) {
+            int articleId = Integer.parseInt(request.getParameter("id"));
+            ArticleDTO article = newAricleManager.getArticleById(articleId);
+            request.setAttribute("article", article);
+        }
         request.getRequestDispatcher("articledetail.jsp").forward(request, response);
     }
 
-    private void articleListAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        //request.setAttribute("myBean", myBeanObject);
+    private void articleListAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        ArrayList<ArticleDTO> stockList = newAricleManager.getArticleList();
+        request.setAttribute("stocklist", stockList);
         request.getRequestDispatcher("articlelist.jsp").forward(request, response);
     }
 
