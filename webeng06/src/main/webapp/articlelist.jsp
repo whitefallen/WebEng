@@ -13,7 +13,6 @@
     <jsp:useBean id="stocklist" type="java.util.ArrayList<transferobject.ArticleDTO>" class="java.util.ArrayList" scope="request"/>
     <%
         Iterator i = stocklist.iterator();
-        System.out.println(stocklist.size());
         while (i.hasNext()) {
             ArticleDTO article = (ArticleDTO)i.next();
     %>

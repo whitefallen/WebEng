@@ -13,15 +13,17 @@ public class AuthFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        System.out.println("Filtered");
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        String authtoken = req.getParameter("authtoken");
-        String confAuthToken = req.getServletContext().getInitParameter("AuthToken");
-        String action = req.getParameter("action");
-        if(action.equals("admin") && (authtoken == null || authtoken != confAuthToken)) {
+
+        String authtoken = request.getParameter("authtoken");
+        String confAuthToken = request.getServletContext().getInitParameter("AuthToken");
+        String action = request.getParameter("action");
+
+        if(action.equals("admin") && (authtoken == null || !authtoken.equals(confAuthToken))) {
             response.sendError(HttpServletResponse.SC_FORBIDDEN);
         }
+
         chain.doFilter(req, resp);
     }
 
