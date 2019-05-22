@@ -36,6 +36,11 @@ public class ArticleManager {
         this.stockDB.updateArticle(article.getName(),article.getId(),article.getAmount()+1,article.getPrice());
     }
 
+    public void updateArticle(String _name, int _id , int _amount, float _price) throws SQLException {
+        this.stockDB.updateArticle(_name,_id,_amount,_price);
+
+    }
+
     public void setStockDB(ArticleDAO stockDB) {
         this.stockDB = stockDB;
     }

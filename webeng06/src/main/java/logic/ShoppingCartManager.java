@@ -51,4 +51,8 @@ public class ShoppingCartManager {
     public float getSum() {
         return this.cartDTO.getSum();
     }
+
+    public ShoppingCartDTO getCartDTO() {
+        return this.cartDTO;
+    }
 }
