@@ -19,9 +19,8 @@ import java.util.ArrayList;
 public class FrontendController extends HttpServlet {
 
     //region instance variables
-    ArticleManager newAricleManager = null;
-    ArticleFactoryDAO articleFactoryDAO = null;
-    ShoppingCartManager newShoppingCartManager = null;
+    private ArticleManager newAricleManager = null;
+    private ShoppingCartManager newShoppingCartManager = null;
     //endregion
 
     //region Constructor
@@ -31,7 +30,6 @@ public class FrontendController extends HttpServlet {
     public FrontendController() {
         super();
         this.initShop();
-
     }
     //endregion
 
@@ -47,7 +45,6 @@ public class FrontendController extends HttpServlet {
         if(request.getSession(false) == null) {
             request.getSession(true);
         }
-
         try {
             this.routerAction(request,response);
         } catch (SQLException e) {
@@ -198,10 +195,10 @@ public class FrontendController extends HttpServlet {
     }
     //endregion
 
+    //region Helper
     private void initShop() {
         newAricleManager = new ArticleManager();
-        articleFactoryDAO = new ArticleFactoryDAO();
-        newAricleManager.setStockDB(articleFactoryDAO.getArticle(1));
+        newAricleManager.setStockDB(ArticleFactoryDAO.getArticle(1));
         newShoppingCartManager = new ShoppingCartManager();
         newShoppingCartManager.setArticleManager(newAricleManager);
     }
@@ -249,5 +246,6 @@ public class FrontendController extends HttpServlet {
         }
         request.setAttribute("actionMessage", repsonseMessage);
     }
+    //endregion
 
 }

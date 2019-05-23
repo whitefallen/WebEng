@@ -45,10 +45,10 @@
                             <input type="text" name="articleName" value="<%=article.getName()%>">
                         </td>
                         <td>
-                            <input type="number" name="articlePrice" min=0 step=0.10 value="<%=article.getPrice()%>">
+                            <input type="number" name="articlePrice" min=0.1 step=0.10 value="<%=article.getPrice()%>">
                         </td>
                         <td>
-                            <input type="number" name="articleAmount" min=0 value="<%=article.getAmount()%>">
+                            <input type="number" name="articleAmount" min=1 value="<%=article.getAmount()%>">
                         </td>
                         <td>
                             <button type="submit" name="articleAction" value="edit">Edit Article</button>
