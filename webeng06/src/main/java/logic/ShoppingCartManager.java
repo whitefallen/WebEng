@@ -55,4 +55,8 @@ public class ShoppingCartManager {
     public ShoppingCartDTO getCartDTO() {
         return this.cartDTO;
     }
+
+    public void setCartDTO(ShoppingCartDTO _cart) {
+        this.cartDTO = _cart;
+    }
 }

@@ -4,6 +4,7 @@ import logic.ArticleManager;
 import logic.ShoppingCartManager;
 import persistence.ArticleFactoryDAO;
 import transferobject.ArticleDTO;
+import transferobject.ShoppingCartDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,9 +43,15 @@ public class FrontendController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         if(request.getSession(false) == null) {
             request.getSession(true);
+        } else {
+            // Rebind Cart Objekt to Session
+            HttpSession session = request.getSession();
+            this.newShoppingCartManager.setCartDTO((ShoppingCartDTO)session.getAttribute("shoppingCart"));
         }
+
         try {
             this.routerAction(request,response);
         } catch (SQLException e) {
