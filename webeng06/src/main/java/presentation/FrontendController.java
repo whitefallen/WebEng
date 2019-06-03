@@ -84,9 +84,15 @@ public class FrontendController extends HttpServlet {
     }
 
     private void handleCheckout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("checkoutAction") != null) {
-            this.newShoppingCartManager.checkoutCart();
-            request.getRequestDispatcher("checkoutSuccess.jsp").forward(request, response);
+        if (request.getParameter("checkoutAction") != null) {
+            if(request.getParameter("checkoutAction").equals("checkout")) {
+                this.newShoppingCartManager.checkoutCart();
+                request.getRequestDispatcher("checkoutSuccess.jsp").forward(request, response);
+            }
+            if (request.getParameter("checkoutAction").equals("resetCart")) {
+                this.resetCart();
+                request.getRequestDispatcher("checkout.jsp").forward(request, response);
+            }
         }
 
     }
@@ -247,12 +253,16 @@ public class FrontendController extends HttpServlet {
             case "edit":
                 repsonseMessage = "Der Artikel wurde erfolgreich bearbeitet";
                 break;
-            case"delte":
+            case"delete":
                 repsonseMessage = "Der Artikel wurde erfolgreich gelöscht";
                 break;
         }
         request.setAttribute("actionMessage", repsonseMessage);
     }
     //endregion
+
+    public void resetCart() {
+        this.newShoppingCartManager.checkoutCart();
+    }
 
 }

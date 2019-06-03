@@ -54,6 +54,7 @@
             </div>
             <form method="post" action="${pageContext.request.contextPath}/frontend?action=checkout">
                 <button type="submit" value="checkout" name="checkoutAction">Bezahlen!</button>
+                <button type="submit" value="resetCart" name="checkoutAction">Warenkorb leeren!</button>
             </form>
         </div>
     </div>
